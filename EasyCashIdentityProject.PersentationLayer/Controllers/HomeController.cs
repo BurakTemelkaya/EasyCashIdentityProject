@@ -1,8 +1,8 @@
-﻿using EasyCashIdentityProject.PersentationLayer.Models;
+﻿using EasyCashIdentityProject.PresentationLayer.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace EasyCashIdentityProject.PersentationLayer.Controllers
+namespace EasyCashIdentityProject.PresentationLayer.Controllers
 {
     public class HomeController : Controller
     {

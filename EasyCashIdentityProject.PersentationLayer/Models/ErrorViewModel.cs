@@ -1,4 +1,4 @@
-namespace EasyCashIdentityProject.PersentationLayer.Models
+namespace EasyCashIdentityProject.PresentationLayer.Models
 {
     public class ErrorViewModel
     {
