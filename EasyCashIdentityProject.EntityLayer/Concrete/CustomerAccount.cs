@@ -17,5 +17,9 @@ namespace EasyCashIdentityProject.EntityLayer.Concrete
         public decimal CustomerAccountBalance { get; set; }
 
         public string CustomerAccountBankBranch { get; set; }
+
+        public int AppUserId { get; set; }
+
+        public AppUser AppUser { get; set; }
     }
 }
