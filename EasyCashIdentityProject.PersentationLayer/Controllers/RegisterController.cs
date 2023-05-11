@@ -31,6 +31,9 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
                     Name = appUserRegisterDto.Name,
                     SurName = appUserRegisterDto.Surname,
                     Email = appUserRegisterDto.Email,
+                    City = "İstanbul",
+                    District = "Sancaktepe",
+                    ImageUrl = "imageUrl"
                 };
                 var result = await _userManager.CreateAsync(appuser, appUserRegisterDto.Password);
                 if (result.Succeeded)
