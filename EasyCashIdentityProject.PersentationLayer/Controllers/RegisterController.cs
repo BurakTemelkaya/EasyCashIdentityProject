@@ -40,6 +40,10 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
                 {
                     return RedirectToAction("Index", "ConfirmMail");
                 }
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError("", item.Description);
+                }
             }
             return View(appUserRegisterDto);
         }
