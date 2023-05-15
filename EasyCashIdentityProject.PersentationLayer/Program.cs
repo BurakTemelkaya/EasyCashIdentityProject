@@ -16,7 +16,10 @@ builder.Services.AddFluentValidationClientsideAdapters();
 
 builder.Services.AddDbContext<Context>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
+builder.WebHost.ConfigureAppConfiguration((context, config) =>
+{
 
+});
 
 var app = builder.Build();
 
