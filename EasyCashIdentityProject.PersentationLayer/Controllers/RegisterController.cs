@@ -12,7 +12,7 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
         private readonly UserManager<AppUser> _userManager;
         private IConfiguration _configuration;
 
-        public RegisterController(UserManager<AppUser> userManager,IConfiguration configuration)
+        public RegisterController(UserManager<AppUser> userManager, IConfiguration configuration)
         {
             _userManager = userManager;
             _configuration = configuration;
@@ -40,7 +40,7 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
                     City = "İstanbul",
                     District = "Sancaktepe",
                     ImageUrl = "imageUrl",
-                    ConfirmCode=code.ToString(),
+                    ConfirmCode = code.ToString(),
                 };
                 var result = await _userManager.CreateAsync(appuser, appUserRegisterDto.Password);
                 if (result.Succeeded)
@@ -52,7 +52,7 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
                     mimeMessage.From.Add(mailboxAddressFrom);
                     mimeMessage.To.Add(mailboxAddressTo);
 
-                    BodyBuilder bodyBuilder = new();                   
+                    BodyBuilder bodyBuilder = new();
 
                     bodyBuilder.TextBody = "Kayıt işlemini gerçekleştirmek için onay kodunuz:" + code;
 
@@ -67,6 +67,8 @@ namespace EasyCashIdentityProject.PresentationLayer.Controllers
                     client.Send(mimeMessage);
 
                     client.Disconnect(true);
+
+                    TempData["Mail"] = appUserRegisterDto.Email;
 
                     return RedirectToAction("Index", "ConfirmMail");
                 }
