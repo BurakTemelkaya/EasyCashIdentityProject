@@ -1,4 +1,4 @@
-﻿@model AppUserRegisterDto
+﻿@model LoginViewModel
 @{
     Layout = null;
 }
@@ -9,7 +9,7 @@
 <!-- Head -->
 <head>
 
-    <title>Easy Cash Identity - Yeni Kullanıcı Kaydı</title>
+    <title>Easy Cash Identity - Giriş Yap</title>
 
     <!-- Meta-Tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,29 +32,23 @@
 <!-- Body -->
 <body>
 
-    <h1>Easy Cash Kayıt Formu</h1>
+    <h1>Easy Cash Giriş Yap</h1>
 
     <div class="w3layoutscontaineragileits">
-        <h2>Kayıt Ol</h2>
+        <h2>Giriş Yapma Formu</h2>
         <form method="post">
-            <input type="text" asp-for="Name" placeholder="Adınız">
-            <input type="text" asp-for="Surname" placeholder="Soyadınız">
-            <input type="email" asp-for="Email" placeholder="E-mail">
             <input type="text" asp-for="UserName" placeholder="Kullanıcı Adınız">
             <input type="password" asp-for="Password" placeholder="Parolanız">
-            <input type="password" asp-for="ConfirmPassword" placeholder="Parola Onayınız">
 
             <ul class="agileinfotickwthree">
                 <li>
-                    <input type="checkbox" id="brand1" value="" style="float: right;">
+                    <input type="checkbox" id="brand1" asp-for="IsPersistent">
                     <label for="brand1"><span></span>Beni Hatırla</label>
-                    <a href="#">Bir Hesabınız Yok Mu ?</a>
                 </li>
             </ul>
             <div class="aitssendbuttonw3ls">
-                <input type="submit" value="Kayıt Ol">
-                <input type="checkbox" />
-                <p> Bir Hesabın Varsa <span>→</span> <a class="w3_play_icon1" href="#small-dialog1"> Tıkla</a></p>
+                <input type="submit" value="Giriş Yap">
+                <p> Parolanı Unuttuysan <span>→</span> <a class="w3_play_icon1" href="#small-dialog1"> Tıkla</a></p>
                 <div class="clear"></div>
             </div>
             <br />
@@ -65,7 +59,7 @@
     </div>
 
     <div class="w3footeragile">
-        <p> &copy; <cache>@DateTime.Now.Year</cache>. Easy Cash Identity Projesi Kayıt Formu. Tüm Hakları Saklıdır.</p>
+        <p> &copy; <cache>@DateTime.Now.Year</cache>. Easy Cash Identity Projesi Giriş Formu. Tüm Hakları Saklıdır.</p>
     </div>
 
 
